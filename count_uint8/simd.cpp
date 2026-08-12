@@ -8,6 +8,14 @@
 #include <unistd.h>
 #include <x86intrin.h>
 
+/*
+resources used
+
+http://0x80.pl/notesen/2019-01-29-simd-count-byte.html
+https://en.algorithmica.org/hpc/simd/intrinsics/
+https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html
+*/
+
 constexpr size_t N = 250'000'000;
 constexpr int STDIN = 0;
 
