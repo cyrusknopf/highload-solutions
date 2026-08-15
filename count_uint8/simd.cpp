@@ -41,7 +41,7 @@ main() -> int
     __m256i local_sum = ALL_ZEROES;
 
     for (size_t i = 0; i < 255; i++, ptr += 32) {
-      __m256i bytes = _mm256_load_si256((__m256i *) ptr);
+      __m256i bytes = _mm256_load_si256(reinterpret_cast<__m256i *>(ptr));
       __m256i mask = _mm256_cmpeq_epi8(MASK, bytes); // byte =FF(-1) if match, =0 if not
 
       local_sum = _mm256_sub_epi8(local_sum, mask); // local_sum-=-1 if match, local_sum-=0 not
@@ -52,14 +52,23 @@ main() -> int
     out = _mm256_add_epi64(out, _64bit_sums);
   }
 
-  uint64_t res = 0;
+  // 2080 bytes remain
+  // 2080 / 32 = 65
 
+  __m256i local_sum = ALL_ZEROES;
   while (ptr < end) {
-    uint8_t val = *ptr++;
-    res += val==127;
-  }
+    __m256i bytes = _mm256_load_si256(reinterpret_cast<__m256i*>(ptr));
+    __m256i mask = _mm256_cmpeq_epi8(MASK, bytes); // byte =FF(-1) if match, =0 if not
 
+    local_sum = _mm256_sub_epi8(local_sum, mask); // local_sum-=-1 if match, local_sum-=0 not
+    ptr += 32;
+  }
   assert(ptr == end);
+
+  __m256i _64bit_sums = _mm256_sad_epu8(local_sum, ALL_ZEROES);
+  out = _mm256_add_epi64(out, _64bit_sums);
+
+  uint64_t res = 0;
 
   res += _mm256_extract_epi64(out, 0);
   res += _mm256_extract_epi64(out, 1);
