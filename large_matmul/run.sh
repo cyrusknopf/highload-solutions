@@ -6,8 +6,8 @@ fi
 SEED=333
 if [ "$2" ]; then
   SEED=$2
-  echo "seed=$SEED"
 fi
+echo "seed=$SEED"
 
 ./generator "$SEED" 1> /dev/shm/mm_input 2> /dev/shm/mm_ans
 ./solution < /dev/shm/mm_input 1> /dev/shm/mm_reply

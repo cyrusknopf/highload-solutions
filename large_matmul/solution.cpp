@@ -1,51 +1,39 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdint.h>
 #include <cassert>
+#include <cstdint>
+#include <cstdio>
+#include <sys/mman.h>
+#include <unistd.h>
 
-#define N 5
+constexpr size_t N = 5;
 
-uint32_t matrix_a[N][N];
-uint32_t matrix_b[N][N];
-uint32_t matrix_c[N][N];
+constexpr int FLAGS = MAP_PRIVATE | MAP_POPULATE | MAP_NORESERVE;
 
-void compute_solution() {
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
+uint32_t out[N*N];
+
+auto
+static kernel(uint32_t* lhs, uint32_t* rhs, uint32_t* out) -> void {
+    for (size_t r = 0; r < N; r++) {
+        for (size_t c = 0; c < N; c++) {
             uint32_t sum = 0;
-            for (int k = 0; k < N; k++) {
-                sum += matrix_a[i][k] * matrix_b[k][j];
+            for (size_t k = 0; k < N; k++) {
+                sum += lhs[(r*N)+k] * rhs[(k*N)+c];
             }
-
-            matrix_c[i][j] = sum;
+            out[(r*N)+c] = sum;
         }
     }
 }
 
-static size_t read_all(int fd, void *buf, size_t count) {
-    size_t total = 0;
-    while (total < count) {
-        ssize_t n = read(fd, (char*)buf + total, count - total);
-        if (n <= 0) break;
-        total += n;
-    }
-    return total;
-}
+auto
+main() -> int {
+  uint32_t *data = (uint32_t *)mmap(nullptr, 2ULL * N * N, PROT_READ,
+                                              FLAGS, STDIN_FILENO, 0);
 
-int main() {
-    size_t expected = 2UL * N * N * sizeof(uint32_t);
-    size_t r1 = read_all(STDIN_FILENO, matrix_a, sizeof(matrix_a));
-    size_t r2 = read_all(STDIN_FILENO, matrix_b, sizeof(matrix_b));
-    assert(r1 + r2 == expected);
-    {
-        char tail;
-        ssize_t x = read(STDIN_FILENO, &tail, 1);
-        assert(x == 0);
-    }
+  uint32_t* a = data;
+  uint32_t* b = data + (N * N);
 
-    compute_solution();
+  kernel(a, b, out);
 
-    write(STDOUT_FILENO, matrix_c, sizeof(matrix_c));
+  write(STDOUT_FILENO, out, sizeof(out));
 
-    return 0;
+  return 0;
 }
