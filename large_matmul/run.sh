@@ -11,4 +11,4 @@ echo "seed=$SEED"
 
 ./generator "$SEED" 1> /dev/shm/mm_input 2> /dev/shm/mm_ans
 ./solution < /dev/shm/mm_input 1> /dev/shm/mm_reply
-diff /dev/shm/mm_reply /dev/shm/mm_ans
+cmp /dev/shm/mm_reply /dev/shm/mm_ans

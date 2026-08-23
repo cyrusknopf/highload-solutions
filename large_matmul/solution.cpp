@@ -1,10 +1,11 @@
 #include <cassert>
+
 #include <cstdint>
 #include <cstdio>
 #include <sys/mman.h>
 #include <unistd.h>
 
-constexpr size_t N = 5;
+constexpr size_t N = 2'000;
 
 constexpr int FLAGS = MAP_PRIVATE | MAP_POPULATE | MAP_NORESERVE;
 
@@ -25,7 +26,7 @@ static kernel(uint32_t* lhs, uint32_t* rhs, uint32_t* out) -> void {
 
 auto
 main() -> int {
-  uint32_t *data = (uint32_t *)mmap(nullptr, 2ULL * N * N, PROT_READ,
+  uint32_t *data = (uint32_t *)mmap(nullptr, 2ULL * N * N * sizeof(uint32_t), PROT_READ,
                                               FLAGS, STDIN_FILENO, 0);
 
   uint32_t* a = data;

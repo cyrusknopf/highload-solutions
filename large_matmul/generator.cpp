@@ -3,11 +3,10 @@
 #include <cassert>
 #include <cstdint>
 #include <cstdlib>
-#include <iostream>
 #include <sys/types.h>
 #include <unistd.h>
 
-constexpr std::size_t N = 5;
+constexpr std::size_t N = 2'000;
 constexpr int STDOUT = 1;
 constexpr int STDERR = 2;
 
