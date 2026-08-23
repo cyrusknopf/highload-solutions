@@ -1,0 +1,1049 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: simd.cpp, Line: 61, Column: 21 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZL17_mm256_load_si256PKDv4_x
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '33'
+  - String:          ':'
+  - Column:          '21'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: simd.cpp, Line: 45, Column: 23 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZL17_mm256_load_si256PKDv4_x
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '17'
+  - String:          ':'
+  - Column:          '23'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: simd.cpp, Line: 62, Column: 20 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZL17_mm256_cmpeq_epi8Dv4_xS_
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '34'
+  - String:          ':'
+  - Column:          '20'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: simd.cpp, Line: 46, Column: 22 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZL17_mm256_cmpeq_epi8Dv4_xS_
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '18'
+  - String:          ':'
+  - Column:          '22'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: simd.cpp, Line: 64, Column: 17 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZL15_mm256_sub_epi8Dv4_xS_
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '36'
+  - String:          ':'
+  - Column:          '17'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: simd.cpp, Line: 48, Column: 19 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZL15_mm256_sub_epi8Dv4_xS_
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '20'
+  - String:          ':'
+  - Column:          '19'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: simd.cpp, Line: 69, Column: 25 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZL15_mm256_sad_epu8Dv4_xS_
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '41'
+  - String:          ':'
+  - Column:          '25'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: simd.cpp, Line: 52, Column: 27 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZL15_mm256_sad_epu8Dv4_xS_
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '24'
+  - String:          ':'
+  - Column:          '27'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: simd.cpp, Line: 70, Column: 9 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZL16_mm256_add_epi64Dv4_xS_
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '42'
+  - String:          ':'
+  - Column:          '9'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: simd.cpp, Line: 53, Column: 11 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZL16_mm256_add_epi64Dv4_xS_
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '25'
+  - String:          ':'
+  - Column:          '11'
+  - String:          ';'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                   Line: 179, Column: 16 }
+Function:        _ZNSolsEm
+Args:
+  - Callee:          _ZNSo9_M_insertImEERSoT_
+  - String:          ' will not be inlined into '
+  - Caller:          _ZNSolsEm
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                       Line: 179, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                   Line: 645, Column: 9 }
+Function:        _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c
+Args:
+  - Callee:          _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+  - String:          ' will not be inlined into '
+  - Caller:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                       Line: 643, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                   Line: 646, Column: 13 }
+Function:        _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c
+Args:
+  - Callee:          _ZNSo3putEc
+  - String:          ' will not be inlined into '
+  - Caller:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                       Line: 643, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Passed
+Pass:            inline
+Name:            Inlined
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                   Line: 644, Column: 17 }
+Function:        _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c
+Args:
+  - String:          ''''
+  - Callee:          _ZNKSt8ios_base5widthEv
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ios_base.h', 
+                       Line: 790, Column: 0 }
+  - String:          ''' inlined into '''
+  - Caller:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                       Line: 643, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost='
+  - Cost:            '-30'
+  - String:          ', threshold='
+  - Threshold:       '375'
+  - String:          ')'
+  - String:          ' at callsite '
+  - String:          'operator<<<std::char_traits<char> >'
+  - String:          ':'
+  - Line:            '2'
+  - String:          ':'
+  - Column:          '17'
+  - String:          ';'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simd.cpp, Line: 31, Column: 40 }
+Function:        main
+Args:
+  - Callee:          mmap
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simd.cpp, Line: 32, Column: 3 }
+Function:        main
+Args:
+  - Callee:          __assert_fail
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simd.cpp, Line: 33, Column: 3 }
+Function:        main
+Args:
+  - Callee:          __assert_fail
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simd.cpp, Line: 67, Column: 3 }
+Function:        main
+Args:
+  - Callee:          __assert_fail
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Passed
+Pass:            inline
+Name:            Inlined
+DebugLoc:        { File: simd.cpp, Line: 79, Column: 13 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZNSolsEm
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost='
+  - Cost:            '0'
+  - String:          ', threshold='
+  - Threshold:       '375'
+  - String:          ')'
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '51'
+  - String:          ':'
+  - Column:          '13'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            Inlined
+DebugLoc:        { File: simd.cpp, Line: 79, Column: 20 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost='
+  - Cost:            '80'
+  - String:          ', threshold='
+  - Threshold:       '325'
+  - String:          ')'
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '51'
+  - String:          ':'
+  - Column:          '20'
+  - String:          ';'
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                   Line: 644, Column: 11 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ptr
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                       Line: 179, Column: 16 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                   Line: 644, Column: 11 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            i64
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                       Line: 179, Column: 16 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ios_base.h', 
+                   Line: 790, Column: 14 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            i64
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                       Line: 179, Column: 16 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                   Line: 644, Column: 11 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            ptr
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                       Line: 179, Column: 16 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                   Line: 644, Column: 11 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            i64
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                       Line: 179, Column: 16 }
+...
+--- !Missed
+Pass:            gvn
+Name:            LoadClobbered
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ios_base.h', 
+                   Line: 790, Column: 14 }
+Function:        main
+Args:
+  - String:          'load of type '
+  - Type:            i64
+  - String:          ' not eliminated'
+  - String:          ' because it is clobbered by '
+  - ClobberedBy:     call
+    DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                       Line: 179, Column: 16 }
+...
+--- !Analysis
+Pass:            loop-vectorize
+Name:            CFGNotUnderstood
+DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+Function:        main
+Args:
+  - String:          'loop not vectorized: '
+  - String:          loop control flow is not understood by vectorizer
+...
+--- !Missed
+Pass:            loop-vectorize
+Name:            MissedDetails
+DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+Function:        main
+Args:
+  - String:          loop not vectorized
+...
+--- !Analysis
+Pass:            loop-vectorize
+Name:            CFGNotUnderstood
+DebugLoc:        { File: simd.cpp, Line: 60, Column: 3 }
+Function:        main
+Args:
+  - String:          'loop not vectorized: '
+  - String:          loop control flow is not understood by vectorizer
+...
+--- !Missed
+Pass:            loop-vectorize
+Name:            MissedDetails
+DebugLoc:        { File: simd.cpp, Line: 60, Column: 3 }
+Function:        main
+Args:
+  - String:          loop not vectorized
+...
+--- !Passed
+Pass:            slp-vectorizer
+Name:            VectorizedHorizontalReduction
+DebugLoc:        { File: simd.cpp, Line: 75, Column: 7 }
+Function:        main
+Args:
+  - String:          'Vectorized horizontal reduction with cost '
+  - Cost:            '-5'
+  - String:          ' and with tree size '
+  - TreeSize:        '1'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        main
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            PartialUnrolled
+DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+Function:        main
+Args:
+  - String:          'unrolled loop by a factor of '
+  - UnrollCount:     '5'
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            PartialUnrolled
+DebugLoc:        { File: simd.cpp, Line: 60, Column: 3 }
+Function:        main
+Args:
+  - String:          'unrolled loop by a factor of '
+  - UnrollCount:     '5'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+Function:        main
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+Function:        main
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+Function:        main
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+Function:        main
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: simd.cpp, Line: 44, Column: 5 }
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: simd.cpp, Line: 28, Column: 1 }
+Function:        main
+Args:
+  - NumVRCopies:     '3'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '1.999996e+00'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+Function:        main
+Args:
+  - NumStackBytes:   '24'
+  - String:          ' stack bytes in function '''
+  - Function:        main
+  - String:          ''''
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          MOV32ri
+  - String:          ': '
+  - INST_MOV32ri:    '3'
+  - String:          "\n"
+  - String:          XOR32rr
+  - String:          ': '
+  - INST_XOR32rr:    '3'
+  - String:          "\n"
+  - String:          CALL64pcrel32
+  - String:          ': '
+  - INST_CALL64pcrel32: '1'
+  - String:          "\n"
+  - String:          CMP64ri32
+  - String:          ': '
+  - INST_CMP64ri32:  '1'
+  - String:          "\n"
+  - String:          JCC_1
+  - String:          ': '
+  - INST_JCC_1:      '1'
+  - String:          "\n"
+  - String:          MOV64rr
+  - String:          ': '
+  - INST_MOV64rr:    '1'
+  - String:          "\n"
+  - String:          PUSH64r
+  - String:          ': '
+  - INST_PUSH64r:    '1'
+  - String:          "\n"
+  - String:          SUB64ri32
+  - String:          ': '
+  - INST_SUB64ri32:  '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: simd.cpp, Line: 32, Column: 3 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          JCC_1
+  - String:          ': '
+  - INST_JCC_1:      '1'
+  - String:          "\n"
+  - String:          TEST64rr
+  - String:          ': '
+  - INST_TEST64rr:   '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          VPXORrr
+  - String:          ': '
+  - INST_VPXORrr:    '2'
+  - String:          "\n"
+  - String:          MOV64rr
+  - String:          ': '
+  - INST_MOV64rr:    '1'
+  - String:          "\n"
+  - String:          SUB64ri32
+  - String:          ': '
+  - INST_SUB64ri32:  '1'
+  - String:          "\n"
+  - String:          VPBROADCASTDYrm
+  - String:          ': '
+  - INST_VPBROADCASTDYrm: '1'
+  - String:          "\n"
+  - String:          XOR32rr
+  - String:          ': '
+  - INST_XOR32rr:    '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          VPXORrr
+  - String:          ': '
+  - INST_VPXORrr:    '1'
+  - String:          "\n"
+  - String:          XOR32rr
+  - String:          ': '
+  - INST_XOR32rr:    '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: simd.cpp, Line: 46, Column: 22 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          VPCMPEQBYrm
+  - String:          ': '
+  - INST_VPCMPEQBYrm: '5'
+  - String:          "\n"
+  - String:          VPSUBBYrr
+  - String:          ': '
+  - INST_VPSUBBYrr:  '5'
+  - String:          "\n"
+  - String:          ADD64ri32
+  - String:          ': '
+  - INST_ADD64ri32:  '1'
+  - String:          "\n"
+  - String:          CMP64ri32
+  - String:          ': '
+  - INST_CMP64ri32:  '1'
+  - String:          "\n"
+  - String:          JCC_1
+  - String:          ': '
+  - INST_JCC_1:      '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: simd.cpp, Line: 52, Column: 27 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ADD64ri32
+  - String:          ': '
+  - INST_ADD64ri32:  '1'
+  - String:          "\n"
+  - String:          CMP64ri32
+  - String:          ': '
+  - INST_CMP64ri32:  '1'
+  - String:          "\n"
+  - String:          JCC_1
+  - String:          ': '
+  - INST_JCC_1:      '1'
+  - String:          "\n"
+  - String:          LEA64r
+  - String:          ': '
+  - INST_LEA64r:     '1'
+  - String:          "\n"
+  - String:          VPADDQYrr
+  - String:          ': '
+  - INST_VPADDQYrr:  '1'
+  - String:          "\n"
+  - String:          VPSADBWYrr
+  - String:          ': '
+  - INST_VPSADBWYrr: '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          MOV32ri
+  - String:          ': '
+  - INST_MOV32ri:    '1'
+  - String:          "\n"
+  - String:          VPXORrr
+  - String:          ': '
+  - INST_VPXORrr:    '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: simd.cpp, Line: 62, Column: 20 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          VPCMPEQBYrm
+  - String:          ': '
+  - INST_VPCMPEQBYrm: '5'
+  - String:          "\n"
+  - String:          VPSUBBYrr
+  - String:          ': '
+  - INST_VPSUBBYrr:  '5'
+  - String:          "\n"
+  - String:          ADD64ri32
+  - String:          ': '
+  - INST_ADD64ri32:  '1'
+  - String:          "\n"
+  - String:          CMP64ri32
+  - String:          ': '
+  - INST_CMP64ri32:  '1'
+  - String:          "\n"
+  - String:          JCC_1
+  - String:          ': '
+  - INST_JCC_1:      '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: simd.cpp, Line: 69, Column: 25 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          MOV64rm
+  - String:          ': '
+  - INST_MOV64rm:    '3'
+  - String:          "\n"
+  - String:          VPADDQrr
+  - String:          ': '
+  - INST_VPADDQrr:   '2'
+  - String:          "\n"
+  - String:          CALL64pcrel32
+  - String:          ': '
+  - INST_CALL64pcrel32: '1'
+  - String:          "\n"
+  - String:          CMP64mi32
+  - String:          ': '
+  - INST_CMP64mi32:  '1'
+  - String:          "\n"
+  - String:          JCC_1
+  - String:          ': '
+  - INST_JCC_1:      '1'
+  - String:          "\n"
+  - String:          MOV8mi
+  - String:          ': '
+  - INST_MOV8mi:     '1'
+  - String:          "\n"
+  - String:          VEXTRACTI128rri
+  - String:          ': '
+  - INST_VEXTRACTI128rri: '1'
+  - String:          "\n"
+  - String:          VMOVPQIto64rr
+  - String:          ': '
+  - INST_VMOVPQIto64rr: '1'
+  - String:          "\n"
+  - String:          VPADDQYrr
+  - String:          ': '
+  - INST_VPADDQYrr:  '1'
+  - String:          "\n"
+  - String:          VPSADBWYrr
+  - String:          ': '
+  - INST_VPSADBWYrr: '1'
+  - String:          "\n"
+  - String:          VPSHUFDri
+  - String:          ': '
+  - INST_VPSHUFDri:  '1'
+  - String:          "\n"
+  - String:          VPXORrr
+  - String:          ': '
+  - INST_VPXORrr:    '1'
+  - String:          "\n"
+  - String:          VZEROUPPER
+  - String:          ': '
+  - INST_VZEROUPPER: '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ADD64ri32
+  - String:          ': '
+  - INST_ADD64ri32:  '1'
+  - String:          "\n"
+  - String:          CALL64pcrel32
+  - String:          ': '
+  - INST_CALL64pcrel32: '1'
+  - String:          "\n"
+  - String:          LEA64r
+  - String:          ': '
+  - INST_LEA64r:     '1'
+  - String:          "\n"
+  - String:          MOV32ri
+  - String:          ': '
+  - INST_MOV32ri:    '1'
+  - String:          "\n"
+  - String:          MOV64rr
+  - String:          ': '
+  - INST_MOV64rr:    '1'
+  - String:          "\n"
+  - String:          POP64r
+  - String:          ': '
+  - INST_POP64r:     '1'
+  - String:          "\n"
+  - String:          RET64
+  - String:          ': '
+  - INST_RET64:      '1'
+  - String:          "\n"
+  - String:          XOR32rr
+  - String:          ': '
+  - INST_XOR32rr:    '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: '/nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0/include/c++/15.2.0/bits/ostream.h', 
+                   Line: 646, Column: 13 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ADD64ri32
+  - String:          ': '
+  - INST_ADD64ri32:  '1'
+  - String:          "\n"
+  - String:          CALL64pcrel32
+  - String:          ': '
+  - INST_CALL64pcrel32: '1'
+  - String:          "\n"
+  - String:          MOV32ri
+  - String:          ': '
+  - INST_MOV32ri:    '1'
+  - String:          "\n"
+  - String:          MOV64rr
+  - String:          ': '
+  - INST_MOV64rr:    '1'
+  - String:          "\n"
+  - String:          POP64r
+  - String:          ': '
+  - INST_POP64r:     '1'
+  - String:          "\n"
+  - String:          RET64
+  - String:          ': '
+  - INST_RET64:      '1'
+  - String:          "\n"
+  - String:          XOR32rr
+  - String:          ': '
+  - INST_XOR32rr:    '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: simd.cpp, Line: 32, Column: 3 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          LEA64r
+  - String:          ': '
+  - INST_LEA64r:     '3'
+  - String:          "\n"
+  - String:          CALL64pcrel32
+  - String:          ': '
+  - INST_CALL64pcrel32: '1'
+  - String:          "\n"
+  - String:          MOV32ri
+  - String:          ': '
+  - INST_MOV32ri:    '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: simd.cpp, Line: 33, Column: 3 }
+Function:        main
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          LEA64r
+  - String:          ': '
+  - INST_LEA64r:     '3'
+  - String:          "\n"
+  - String:          CALL64pcrel32
+  - String:          ': '
+  - INST_CALL64pcrel32: '1'
+  - String:          "\n"
+  - String:          MOV32ri
+  - String:          ': '
+  - INST_MOV32ri:    '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: simd.cpp, Line: 29, Column: 0 }
+Function:        main
+Args:
+  - NumInstructions: '97'
+  - String:          ' instructions in function'
+...

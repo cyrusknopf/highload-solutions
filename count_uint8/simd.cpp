@@ -7,6 +7,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <x86intrin.h>
+#include <cstdint>
 
 /*
 resources used
@@ -36,8 +37,8 @@ main() -> int
   __m256i out {ALL_ZEROES};
 
   uint8_t* ptr = in;
-
-  while (ptr + 255 * 32 < end) {
+  // TODO: The number of iters is determinable at compile time
+  while (ptr + 255 * 32 < end) { 
     __m256i local_sum = ALL_ZEROES;
 
     for (size_t i = 0; i < 255; i++, ptr += 32) {
@@ -56,6 +57,7 @@ main() -> int
   // 2080 / 32 = 65
 
   __m256i local_sum = ALL_ZEROES;
+  // TODO: The number of iters is determinable at compile time
   while (ptr < end) {
     __m256i bytes = _mm256_load_si256(reinterpret_cast<__m256i*>(ptr));
     __m256i mask = _mm256_cmpeq_epi8(MASK, bytes); // byte =FF(-1) if match, =0 if not
