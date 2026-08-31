@@ -1,17 +1,21 @@
-#include <bitset>
 #include <cassert>
 #include <emmintrin.h>
 #include <iostream>
 #include <print>
+#include <smmintrin.h>
 #include <sys/mman.h>
+#include <tmmintrin.h>
 #include <unistd.h>
 #include <x86intrin.h>
 #include <immintrin.h>
+#include <iomanip>
 
 /**
 
 resources used:
 https://stackoverflow.com/questions/77800999/fastest-way-to-mask-out-bytes-higher-than-separator-position-with-simd
+
+https://stackoverflow.com/questions/35127060/how-to-implement-atoi-using-simd
 
 max val =
 2147483647
@@ -48,21 +52,23 @@ static const __m128i NEWLINE = _mm_set1_epi8('\n');
 static const __m128i IDXS =
     _mm_set_epi8(15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
 
-static const __m128i FST_MUL = _mm_setr_epi32(1000, 100, 10, 0);
-static const __m128i SND_MUL = _mm_setr_epi32(0, 100'000'000, 10000, 1);
+static const __m128i FST_MUL = _mm_set_epi32(1000, 100, 10, 1);
+static const __m128i SND_MUL = _mm_set_epi32(0, 100'000'000, 10000, 1);
 
 auto
 print_m128(__m128i in, const char* name = nullptr) -> void
 {
-  std::cout << std::hex;
-  std::cout << "0x";
-  // std::cout << std::bitset<64>(_mm_extract_epi64(in, 1));
-  // std::cout << std::bitset<64>(_mm_extract_epi64(in, 0));
-  std::cout << _mm_extract_epi64(in, 1);
-  std::cout << _mm_extract_epi64(in, 0);
-  std::cout << std::dec;
-  if (name) std::cout << " <- " << name;
-  std::cout << '\n';
+    uint64_t hi = _mm_extract_epi64(in, 1);
+    uint64_t lo = _mm_extract_epi64(in, 0);
+
+    std::cout << "0x"
+               << std::hex << std::setfill('0')
+               << std::setw(16) << hi
+               << std::setw(16) << lo
+               << std::dec;
+
+    if (name) std::cout << " <- " << name;
+    std::cout << '\n';
 }
 
 auto
@@ -83,18 +89,42 @@ main() -> int
     // mask out indexes which are less than the number of digits we have
     __m128i mask = _mm_cmplt_epi8(IDXS, _mm_set1_epi8(num_digits));
 
+    buf = _mm_sub_epi8(buf, _mm_set1_epi8('0'));
     __m128i digits = _mm_and_si128(buf, mask);
+    print_m128(digits, "digs");
     // advance past these digits and the \n
     ptr += num_digits + 1;
 
     // take the digits and extend them to 16 bit integers
     __m128i lo = _mm_unpacklo_epi8(digits, _mm_setzero_si128());
     __m128i hi = _mm_unpackhi_epi8(digits, _mm_setzero_si128());
+
+    print_m128(lo, "lo");
+    print_m128(hi, "hi");
+    printf("\n");
+
+    __m128i lom = _mm_madd_epi16(lo, FST_MUL);
+    __m128i him = _mm_madd_epi16(hi, FST_MUL);
+
+    print_m128(lom, "lom");
+    print_m128(him, "him");
+    printf("\n");
+
+    __m128i hadd = _mm_hadd_epi32(lom, him);
+    print_m128(hadd, "hadd");
+    printf("\n");
+    __m128i muld = _mm_mullo_epi32(hadd, SND_MUL);
+    print_m128(muld, "muld");
+    print_m128(SND_MUL, "sndmul");
+    printf("\n");
+
+    __m128i hsum = _mm_hadd_epi32(muld, _mm_setzero_si128());
+    print_m128(hsum, "hsum");
+    hsum = _mm_hadd_epi32(hsum, _mm_setzero_si128());
+    print_m128(hsum, "hsum");
+    
   // }
   //
-
-  print_m128(lo, "lo");
-  print_m128(hi, "hi");
 
   std::println("0");
   return 0;
