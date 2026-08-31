@@ -6,7 +6,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-constexpr std::size_t N = 1024;
+constexpr std::size_t N = 2'000;
 constexpr int STDOUT = 1;
 constexpr int STDERR = 2;
 

@@ -5,11 +5,13 @@
 #include <sys/mman.h>
 #include <unistd.h>
 
-constexpr size_t N = 1024;
+constexpr size_t N = 2'000;
+constexpr size_t BLOCKSIZE = 100;
+static_assert(N % BLOCKSIZE == 0);
 
 constexpr int FLAGS = MAP_PRIVATE | MAP_POPULATE | MAP_NORESERVE;
 
-uint32_t out[N*N];
+alignas(32) uint32_t out[N*N];
 
 auto
 static kernel(uint32_t* lhs, uint32_t* rhs, uint32_t* out) -> void {
@@ -24,7 +26,7 @@ static kernel(uint32_t* lhs, uint32_t* rhs, uint32_t* out) -> void {
 
 auto
 main() -> int {
-  uint32_t *data = (uint32_t *)mmap(nullptr, 2ULL * N * N * sizeof(uint32_t), PROT_READ,
+  alignas(32) uint32_t *data = (uint32_t *)mmap(nullptr, 2ULL * N * N * sizeof(uint32_t), PROT_READ,
                                               FLAGS, STDIN_FILENO, 0);
 
   uint32_t* a = data;
