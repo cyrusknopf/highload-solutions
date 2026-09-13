@@ -52,19 +52,26 @@ static const __m128i NEWLINE = _mm_set1_epi8('\n');
 static const __m128i IDXS =
     _mm_set_epi8(15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0);
 
-static const __m128i FST_MUL = _mm_set_epi32(1000, 100, 10, 1);
-static const __m128i SND_MUL = _mm_set_epi32(0, 100'000'000, 10000, 1);
+static const __m128i FST_MUL = _mm_set_epi16(1000, 100, 10, 1, 1000, 100, 10, 1);
+static const __m128i SND_MUL = _mm_set_epi32(0, 100'000'000, 10'000, 1);
 
 auto
 print_m128(__m128i in, const char* name = nullptr) -> void
 {
-    uint64_t hi = _mm_extract_epi64(in, 1);
-    uint64_t lo = _mm_extract_epi64(in, 0);
+    uint32_t a = _mm_extract_epi32(in, 3);
+    uint32_t b = _mm_extract_epi32(in, 2);
+    uint32_t c = _mm_extract_epi32(in, 1);
+    uint32_t d = _mm_extract_epi32(in, 0);
 
     std::cout << "0x"
                << std::hex << std::setfill('0')
-               << std::setw(16) << hi
-               << std::setw(16) << lo
+               << std::setw(16) << a
+               << ' '
+               << std::setw(16) << b
+               << ' '
+               << std::setw(16) << c
+               << ' '
+               << std::setw(16) << d
                << std::dec;
 
     if (name) std::cout << " <- " << name;
@@ -103,30 +110,43 @@ main() -> int
     print_m128(hi, "hi");
     printf("\n");
 
-    __m128i lom = _mm_madd_epi16(lo, FST_MUL);
-    __m128i him = _mm_madd_epi16(hi, FST_MUL);
-
-    print_m128(lom, "lom");
-    print_m128(him, "him");
+    __m128i lofma = _mm_madd_epi16(lo, FST_MUL);
+    __m128i hifma = _mm_madd_epi16(hi, FST_MUL);
+    print_m128(lofma, "lofma");
+    print_m128(hifma, "hifma");
     printf("\n");
 
-    __m128i hadd = _mm_hadd_epi32(lom, him);
+    __m128i hadd = _mm_hadd_epi32(lofma, hifma);
     print_m128(hadd, "hadd");
-    printf("\n");
-    __m128i muld = _mm_mullo_epi32(hadd, SND_MUL);
-    print_m128(muld, "muld");
-    print_m128(SND_MUL, "sndmul");
+    print_m128(SND_MUL, "SND_MUL");
     printf("\n");
 
-    __m128i hsum = _mm_hadd_epi32(muld, _mm_setzero_si128());
-    print_m128(hsum, "hsum");
-    hsum = _mm_hadd_epi32(hsum, _mm_setzero_si128());
-    print_m128(hsum, "hsum");
+    __m128i mul = _mm_mullo_epi32(hadd, SND_MUL);
+    print_m128(mul, "mul");
+    printf("\n");
+
+    __m128i shuf = _mm_shuffle_epi32(mul, 0b11101110);
+    print_m128(shuf, "shuf");
+    printf("\n");
+
+    mul = _mm_add_epi32(shuf, mul);
+    print_m128(mul, "mul");
+    printf("\n");
+
+    shuf = _mm_shuffle_epi32(mul, 0b01010101);
+    print_m128(shuf, "shuf");
+    printf("\n");
+
+    mul = _mm_add_epi32(shuf, mul);
+    print_m128(mul ,"mul");
+    printf("\n");
+
+    printf("\n");
     
   // }
   //
 
-  std::println("0");
+  // std::println("0");
   return 0;
 }
 
